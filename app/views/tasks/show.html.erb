@@ -3,8 +3,9 @@
 
 <li>
 <%= @task.content_2 %>
+&gt;
+<%= @task.status %>
 </li>
-
 
 
 
@@ -13,7 +14,7 @@
 </ul>
 
 <p>
-<%= link_to 'このタスク名を変更する', edit_task_path(@task) %>
+<%= link_to 'タスク名:詳細:statusを変更する', edit_task_path(@task) %>
 </p>
 
 <p>
