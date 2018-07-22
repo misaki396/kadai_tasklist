@@ -1,19 +1,19 @@
 <h1>
-<%= @task.content %>の編集ページ</h1>
+タスク名の変更ページ</h1>
 
 <%= form_for(@task) do |f| %>
 
 
-<%= f.label :content, 'ToDo' %>
+<%= f.label :content, '名前' %>
 
 
 <%= f.text_field :content %>
 
 
 
-<%= f.submit '投稿' %>
+<%= f.submit '変更' %>
 
 <% end %>
 
 
-<%= link_to '一覧に戻る', tasks_path %>
+<%= link_to 'タスクリスト一覧に戻る', tasks_path %>
