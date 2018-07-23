@@ -1,20 +1,33 @@
-<h1>タスクリスト</h1>
+<h1>タスク一覧</h1>
 
-<ul>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>順番</th>
+        <th>タスク</th>
+        <th>status</th>
+      </tr>
+    </thead>
+    <tbody>
 
 <% @tasks.each do |task| %>
 
-<p><input type="checkbox">
-<%= link_to task.content, task %>
-&gt; 
-<%= task.status %>
-</p>
+      <tr>
+          
+          <td><%= task.id %></td>
 
+<td><input type="checkbox">
+<%= link_to task.content, task %></td>
+<td> 
+<%= task.status %></td>
 
+      </tr>
 <% end %>
 
-</ul>
+</tbody>
+  </table>
+  <div>
 
 <p>
-<%= link_to 'タスクの追加', new_task_path %>
+<%= link_to 'タスクの追加', new_task_path, class: "btn btn-primary"%>
 </p>
