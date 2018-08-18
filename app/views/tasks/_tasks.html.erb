@@ -1,0 +1,32 @@
+<ul class="media-list">
+  
+  <table class="table table-hover">
+         <thead>
+           <tr>
+             <th>タスク</th>
+             <th>内容</th>
+             <th>status</th>
+            </tr>
+            </thead>
+  <tbody>
+<% tasks.each do |task| %>
+<tr>
+
+<% user = task.user %>
+         <td><%= task.content %></td>
+          <td><%= task.content_2 %></td>
+          <td><%= task.status %></td>
+          <td><% if current_user == task.user %>
+            <%= link_to "削除", task, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn_danger btn_xs' %>
+            <% end %></td>
+          <td><span class="text-muted"><%= task.created_at %></span></td>
+</tr>
+<% end %>
+</tbody>
+
+</table>
+
+
+
+
+</ul>

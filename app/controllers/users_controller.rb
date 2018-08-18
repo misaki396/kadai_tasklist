@@ -1,20 +1,22 @@
 class UsersController < ApplicationController
-before_action :require_user_logged_in, only: [:index, :show]
+before_action :require_user_logged_in
 
   def index
-    @users = User.all.page(params[:page])
+    @users = User.all
   end
 
   def show
     @user = User.find(params[:id])
+    @tasks = @user.tasks.order('created_at DESC')
+    counts(@user)
   end
 
   def new
     @user = User.new
   end
 
-  def create
-  @user = User.new(user_params)
+ def create
+    @user = User.new(user_params)
 
     if @user.save
       flash[:success] = 'ユーザを登録しました。'

@@ -1,11 +1,7 @@
 <header>
  <div class="container">
    <nav class="navbar navbar-expand-sm navbar-light bg-warning">
-     <a href="" class="navbar-brand text-light"><%= link_to 'Tasklist', tasks_path %></a>
-     <button class="navbar-toggler" data-toggle="collapse" data-target="#tasklist">
-       <span class="navbar-toggler-icon"></span>
-     </button>
-     <div id="tasklist" class="collapse navbar-collapse navbar-light justify-content-end">
+     
        <ul class="navbar-nav">
            <% if logged_in? %>
 
@@ -28,16 +24,19 @@
             </li>
 
 <% else %>
-         <li>
+<a href="" class="navbar-brand text-light"><%= link_to 'Tasklist', root_url %></a>
+     <button class="navbar-toggler" data-toggle="collapse" data-target="#tasklist">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+     <div id="tasklist" class="collapse navbar-collapse navbar-light justify-content-end">
+         
           <li>
 <%= link_to 'Signup', signup_path %>
 </li>
           <li>
 <%= link_to 'Login', login_path %>
 </li>
-           <%= link_to  'タスクリストの追加', new_task_path %>
-          
-         </li>
+           
          <% end %>
        </ul>
      </div>
